@@ -10,9 +10,8 @@
   "scripts": {
     "start": "gulp server",
     "build": "gulp clean && gulp sass && gulp copy && webpack",
-    "prepublish": "npm run build && babel ./src --out-dir ./lib && gulp dist",
     "prepare": "npm run build && babel ./src --out-dir ./lib && gulp dist",
-    "postinstall": "npm install && npm run prepublish",
+    "postinstall": "npm run prepare",
     "test": "npm run lint && jest",
     "test:watch": "jest --watch",
     "lint": "eslint src",
